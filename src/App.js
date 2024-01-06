@@ -24,11 +24,11 @@ import {
 
 import "./App.css";
 const App = () => {
-  const activeMenu = false;
+  const activeMenu = true;
   return (
     <div>
       <BrowserRouter>
-        <div className="flex relative dark:bg-main-dark-bg">
+        <div className="flex relative  dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="Top">
               <button
@@ -42,7 +42,6 @@ const App = () => {
           </div>
           {activeMenu ? (
             <div className=" w-72 sidebar fixed dark:bg-secondary-dark-bg bg-white">
-              {" "}
               <Sidebar />
             </div>
           ) : (
@@ -51,7 +50,7 @@ const App = () => {
             </div>
           )}
           <div
-            className={` dark:bg-main-bg bg-yellow-900	 min-h-screen w-full ${
+            className={` dark:bg-main-bg bg-main-bg	 min-h-screen w-full ${
               activeMenu ? "md:ml-75" : "flex-2"
             } `}
           >
