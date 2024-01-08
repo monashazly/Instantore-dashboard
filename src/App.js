@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React , { useEffect} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { Navbar, Footer, Sidebar, ThemeSettings } from "./components";
+import { Navbar, Sidebar } from "./components";
 import {
   Ecommerce,
   Orders,
@@ -25,7 +25,13 @@ import { useStateContext } from "./contexts/ContextProvider"
 
 import "./App.css";
 const App = () => {
-  const { activeMenu } = useStateContext()
+
+  const { activeMenu , screenSize , setActiveMenu } = useStateContext()
+
+  useEffect(()=>{
+     if(screenSize <= 900) setActiveMenu(false)
+     else setActiveMenu(true)
+  } , [screenSize])
   
   return (
     <div>
@@ -53,7 +59,7 @@ const App = () => {
           )}
           <div
             className={` dark:bg-main-bg bg-main-bg	 min-h-screen w-full ${
-              activeMenu ? "md:ml-75" : "flex-2"
+              activeMenu ? "md:ml-72" : "flex-2"
             } `}
           >
             <div className="navbar fixed md:static bg-main-bg dark:bg-main-dark-bg w-full">
