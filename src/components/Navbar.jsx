@@ -49,7 +49,7 @@ const Navbar = () => {
       customFunc: () => handleClick("notification"),
       color: "blue",
       icon: <RiNotification3Line />,
-      dotColor: "",
+      dotColor: "#03C9D7",
     },
     // {
     //   title : 'Profile',
