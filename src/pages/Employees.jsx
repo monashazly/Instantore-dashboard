@@ -1,11 +1,34 @@
-import React from 'react'
+import {
+  GridComponent,
+  ColumnDirective,
+  ColumnsDirective,
+  Page,
+  Search,
+  Inject,
+  Toolbar
+} from "@syncfusion/ej2-react-grids";
+import { Header } from "../components";
+import { employeesGrid, employeesData } from "../data/dummy";
 
 const Employees = () => {
   return (
-    <div>
-      
+    <div className="mx-2 my-20 md:m-10 p-2 md:p-5 bg-white rounded-3xl">
+      <Header category="Page" title="Employees" />
+      <GridComponent 
+      width="auto"
+      dataSource={employeesData}
+      allowPaging
+      toolbar={['Search']}
+      >
+        <ColumnsDirective>
+          {employeesGrid.map((item, index) => (
+            <ColumnDirective key={index} {...item} />
+          ))}
+        </ColumnsDirective>
+        <Inject services={[ Page , Search , Toolbar]} />
+      </GridComponent>
     </div>
-  )
-}
+  );
+};
 
-export default Employees
+export default Employees;

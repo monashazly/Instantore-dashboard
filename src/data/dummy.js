@@ -1486,7 +1486,7 @@ export const employeesData = [
     Name: 'Nancy Davolio',
     Title: 'Sales Representative',
     HireDate: '01/02/2021',
-    Country: 'USA',
+    Country: 'Egypt',
     ReportsTo: 'Carson',
     EmployeeImage:
     avatar3,
