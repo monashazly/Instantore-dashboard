@@ -15,6 +15,9 @@
   .sidebar{
     z-index: 10000000;
   }
+  .active-sidebar-width{
+    width: 100%;
+  }
 
 }
 
