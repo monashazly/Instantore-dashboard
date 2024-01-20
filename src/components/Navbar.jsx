@@ -33,21 +33,21 @@ const Navbar = () => {
   const btnsData = [
     {
       title: "Cart",
-      customFunc: () => handleClick("cart"),
+      customFunc: () => handleClick("cart" , true),
       color: currentColor,
       icon: <FiShoppingCart />,
       dotColor: "",
     },
     {
       title: "Chat",
-      customFunc: () => handleClick("chat"),
+      customFunc: () => handleClick("chat" , true),
       color: currentColor,
       icon: <BsChatLeft />,
       dotColor: "#03C9D7",
     },
     {
       title: "Notifications",
-      customFunc: () => handleClick("notification"),
+      customFunc: () => handleClick("notification" , true),
       color: currentColor,
       icon: <RiNotification3Line />,
       dotColor: "#03C9D7",
@@ -86,7 +86,7 @@ const Navbar = () => {
         <TooltipComponent content="Profile">
           <div
             className="flex gap-2 items-center cursor-pointer p-1 hover:bg-light-gray rounded-lg"
-            onClick={() => handleClick("userProfile")}
+            onClick={() => handleClick("userProfile" , true)}
           >
             <img alt="?" src={avatar} className="rounded-full w-8 h-8" />
             <p className=" flex flex-nowrap items-center">

@@ -36,8 +36,8 @@ export const ContextProvider = ({ children }) => {
     setCurrentColor(color)
     setCurrentMode(mode)
   }
-  const handleClick = (clicked) => {
-    setIsClicked({ ...intialState, [clicked]: true });
+  const handleClick = (clicked, val ) => {
+    setIsClicked({ ...intialState, [clicked]: val });
   };
 
   return (
