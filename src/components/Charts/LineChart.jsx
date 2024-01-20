@@ -8,8 +8,7 @@ import {
   Inject,
   DateTime,
   Legend,
-  Tooltip,
-  Chart,
+  Tooltip
 } from "@syncfusion/ej2-react-charts";
 import {
   lineCustomSeries,
