@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import { Navbar, Sidebar } from "./components";
+import { Navbar, Sidebar, ThemeSettings } from "./components";
 
 import {
   Ecommerce,
@@ -26,15 +26,18 @@ import { useStateContext } from "./contexts/ContextProvider";
 
 import "./App.css";
 const App = () => {
-  const { activeMenu, screenSize, setActiveMenu } = useStateContext();
+  const { activeMenu, screenSize, setActiveMenu , themeSettings , setThemeSettings , currentColor , currentMode , setColorAndModeFromLocalStorage } = useStateContext();
 
   useEffect(() => {
     if (screenSize <= 900) setActiveMenu(false);
     else setActiveMenu(true);
-  }, [screenSize]);
+  }, [screenSize])
 
+  useEffect(() => {
+    setColorAndModeFromLocalStorage()
+  }, [setColorAndModeFromLocalStorage])
   return (
-    <div>
+    <div className={currentMode === 'Dark' ? 'dark' : ''}>
       <BrowserRouter>
         <div className="flex relative  dark:bg-main-dark-bg">
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
@@ -42,9 +45,11 @@ const App = () => {
               <button
                 type="button"
                 className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-                style={{ background: "blue", borderRadius: "50%" }}
+                style={{ backgroundColor: currentColor, borderRadius: "50%" }}
               >
-                <FiSettings />
+                <FiSettings onClick={()=> {
+                    setThemeSettings(true)
+                }}/>
               </button>
             </TooltipComponent>
           </div>
@@ -58,7 +63,7 @@ const App = () => {
             </div>
           )}
           <div
-            className={` dark:bg-main-bg bg-main-bg	 min-h-screen w-full ${
+            className={` dark:bg-main-dark-bg bg-main-bg	 min-h-screen w-full ${
               activeMenu && " md:ml-72 active-sidebar-width "
             } `}
           >
@@ -66,6 +71,7 @@ const App = () => {
               <Navbar />
             </div>
             <div>
+              { themeSettings &&  <ThemeSettings />}
               <Routes>
                 <Route path="/" element={<Ecommerce />} />
                 <Route path="/ecommerce" element={<Ecommerce />} />
