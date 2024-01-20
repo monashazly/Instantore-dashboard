@@ -1,4 +1,4 @@
-import { GridComponent , ColumnDirective , ColumnsDirective , Page , Selection , Inject , Edit , Toolbar , Sort , Filter } from "@syncfusion/ej2-react-grids";
+import { GridComponent , ColumnDirective , ColumnsDirective , Page , Selection , Inject , Edit , Toolbar , Sort } from "@syncfusion/ej2-react-grids";
 import { Header} from '../components';
 import { customersData , customersGrid } from "../data/dummy";
 

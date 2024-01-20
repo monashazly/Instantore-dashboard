@@ -31,7 +31,7 @@ const App = () => {
   useEffect(() => {
     if (screenSize <= 900) setActiveMenu(false);
     else setActiveMenu(true);
-  }, [screenSize])
+  }, [screenSize , setActiveMenu])
 
   useEffect(() => {
     setColorAndModeFromLocalStorage()

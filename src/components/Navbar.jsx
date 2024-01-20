@@ -62,7 +62,7 @@ const Navbar = () => {
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [setScreenSize]);
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
