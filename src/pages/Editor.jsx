@@ -17,6 +17,9 @@ const Editor = () => {
       <RichTextEditorComponent>
         <Inject services={[HtmlEditor, Image, Link, QuickToolbar, Toolbar]} />
       </RichTextEditorComponent>
+      <div className="mt-20 text-center">
+      © 2023 All rights reserved by <a href="https://github.com/monashazly/Instantore-dashboard">Mona shazly</a>
+      </div>
     </div>
   );
 };

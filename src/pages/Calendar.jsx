@@ -11,6 +11,10 @@ const Calendar = () => {
       eventSettings={{ dataSource : scheduleData}}>
         <Inject services={[Day , Week , WorkWeek , Month , Agenda , Resize , DragAndDrop]} />
       </ScheduleComponent>
+      <div className="mt-20 text-center">
+      © 2023 All rights reserved by <a href="https://github.com/monashazly/Instantore-dashboard">Mona shazly</a>
+      </div>
+     
     </div>
   )
 }

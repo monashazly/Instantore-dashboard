@@ -9,6 +9,9 @@ const Pie = () => (
     <div className="w-full">
       <PieChart id="chart-pie" data={pieChartData} legendVisiblity height="full" />
     </div>
+    <div className="mt-20 text-center">
+      © 2023 All rights reserved by <a href="https://github.com/monashazly/Instantore-dashboard">Mona shazly</a>
+      </div>
   </div>
 );
 

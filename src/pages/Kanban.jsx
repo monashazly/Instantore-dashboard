@@ -23,6 +23,9 @@ const Kanban = () => {
           ))}
         </ColumnsDirective>
       </KanbanComponent>
+      <div className="mt-20 text-center">
+      © 2023 All rights reserved by <a href="https://github.com/monashazly/Instantore-dashboard">Mona shazly</a>
+      </div>
     </div>
   );
 };

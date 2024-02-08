@@ -32,6 +32,9 @@ const Orders = () => {
         </ColumnsDirective>
         <Inject services={[Resize , Sort , ContextMenu ,Filter , Page , ExcelExport , Edit , PdfExport]} />
       </GridComponent>
+      <div className="mt-20 text-center">
+      © 2023 All rights reserved by <a href="https://github.com/monashazly/Instantore-dashboard">Mona shazly</a>
+      </div>
     </div>
   );
 };
